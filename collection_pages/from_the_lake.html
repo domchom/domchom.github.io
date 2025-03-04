@@ -37,35 +37,38 @@
         }
     </style>
         <!-- carousel -->
-        <style>
-            * { box-sizing: border-box; margin: 0; padding: 0; }
-            .carousel-container {
-                position: relative;
-                width: 90%;
-                margin: auto;
-                overflow: hidden;
-            }
-            .carousel {
-                display: flex;
-                transition: transform 0.5s ease-in-out;
-            }
-            .carousel img {
-                width: 100%;
-                border-radius: 10px;
-            }
-            .prev, .next {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: rgba(0, 0, 0, 0.5);
-                color: white;
-                border: none;
-                padding: 10px;
-                cursor: pointer;
-            }
-            .prev { left: 10px; }
-            .next { right: 10px; }
-        </style>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .carousel-container {
+            position: relative;
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* This preserves the aspect ratio */
+            border-left: 1px solid #f2f2f2;
+            border-right: 1px solid #f2f2f2;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    </style>
 </head>
 
 <body>
@@ -83,7 +86,7 @@
                 <a href="/Users/domchom/Documents/GitHub/domchom.github.io/index.html" "><i>home</i></a> <br>
                 <a href="/Users/domchom/Documents/GitHub/domchom.github.io/aboutme.html"><i>about</i></a> <br>
                 <br>
-                <a href="./from_the_lake.html" style="color: lightblue;"><i>from the lake</i></a> <br>
+                <a href="./from_the_lake.html" style="color: #228B22;"><i><b>from the lake</b></i></a> <br>
                 <a href="./midwest_auto.html"><i>midwest auto</i></a> <br>
             </nav>
         </div>
@@ -94,6 +97,9 @@
                 <button class="prev" onclick="prevSlide()">&#10094;</button>
                 <div class="carousel" id="carousel">
                     <img src="/Users/domchom/Documents/GitHub/domchom.github.io/images/from_the_lake/_MG_9207-Pano-positive.jpeg" alt="Canoes stacked in the snow">
+                    <img src="/Users/domchom/Documents/GitHub/domchom.github.io/images/from_the_lake/_MG_9405-Pano-positive-high-quality-2.jpg" alt="Two ducks framed under train tracks">
+                    <img src="/Users/domchom/Documents/GitHub/domchom.github.io/images/from_the_lake/_MG_9454-Pano-positive.jpg" alt="[TODO]">
+                    <img src="/Users/domchom/Documents/GitHub/domchom.github.io/images/from_the_lake/_MG_9423-Pano-positive-high-quality-2.jpg" alt="[TODO]">
                 </div>
                 <button class="next" onclick="nextSlide()">&#10095;</button>
             </div>
