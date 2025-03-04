@@ -63,7 +63,7 @@
         .next {
             cursor: pointer;
             position: absolute;
-            top: 50%;
+            top: 25px;
             transform: translateY(-50%); /* Centers the arrows vertically */
             width: auto;
             padding: 10px;
@@ -114,22 +114,26 @@
     .gallery-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 20px;
+        margin: 20px;
+        max-height: 100vh; /* Make sure the gallery doesn't exceed the viewport height */
+        overflow: auto; /* Allows scrolling if content overflows */
     }
 
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 10px;
-    }
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust size as needed */
+        grid-auto-rows: 300px; /* Auto-adjust row height */
+        gap: 5px; /* Reduces vertical and horizontal gap */
+        padding: 5px; /* Adds padding around the grid */}
 
     .grid-item {
         width: 100%;
         height: auto;
-        object-fit: cover;
-        border: 2px solid #ddd;
-        border-radius: 5px;
+        display: block;
+        border: none; /* Removes any border */
+        outline: none; /* Ensures no outline appears */
+        box-shadow: none; /* Removes any shadow effects */
+        border-radius: 0; /* Removes any corner radius */
     }
 
     .gallery-grid img {
@@ -160,174 +164,22 @@
         </div>
         <!-- Image Area -->
         <div class="image-area">
-            <!-- Container for the image gallery -->
-            <div class="container">
-                <!-- Full-width images with number text -->
-                 
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9043-Pano-positive.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9084-Pano-positive.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9207-Pano-positive.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9296-positive.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9393-Pano-positive-high-quality-2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9399-Pano-positive-high-quality-2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9405-Pano-positive-high-quality-2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9411-Pano-positive-high-quality-2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9417-Pano-positive-high-quality-2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9423-Pano-positive-high-quality-2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9429-Pano-positive-high-quality-2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9435-Pano-positive-high-quality-2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9454-Pano-positive.jpg" style="width:100%">
-                </div>
-                <div class="mySlides">
-                    <img src="assets/images/from_the_lake/_MG_9499-Pano-positive.jpg" style="width:100%">
-                </div>
-    
+            <div class="container" id="slideshow-container">
                 <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 <a class="gallery" onclick="showGallery()">&#10095;</a>
             </div>
-    
+        </div>    
             <!-- Gallery section hidden by default -->
             <div class="gallery-grid" style="display: none;">
-                <div class="grid-container">
-                    <img src="assets/images/from_the_lake/_MG_9043-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(1)" />
-                    <img src="assets/images/from_the_lake/_MG_9084-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(2)" />
-                    <img src="assets/images/from_the_lake/_MG_9207-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(3)" />
-                    <img src="assets/images/from_the_lake/_MG_9296-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(4)" />
-                    <img src="assets/images/from_the_lake/_MG_9393-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(5)" />
-                    <img src="assets/images/from_the_lake/_MG_9399-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(6)" />
-                    <img src="assets/images/from_the_lake/_MG_9405-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(7)" />
-                    <img src="assets/images/from_the_lake/_MG_9411-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(8)" />
-                    <img src="assets/images/from_the_lake/_MG_9417-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(9)" />
-                    <img src="assets/images/from_the_lake/_MG_9423-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(10)" />
-                    <img src="assets/images/from_the_lake/_MG_9429-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(11)" />
-                    <img src="assets/images/from_the_lake/_MG_9435-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(12)" />
-                    <img src="assets/images/from_the_lake/_MG_9454-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(13)" />
-                    <img src="assets/images/from_the_lake/_MG_9499-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(14)" />
-                    <!-- Add more images here if needed -->
+                <div class="grid-container" id="gallery-container">
                 </div>
             </div>
+            <script src="assets/js/from_the_lake.js"></script>
         </div>
     </div>
-    
-    <!-- Styles for the gallery grid -->
-    <style>
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-    
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-        }
-    
-        .grid-item {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-        }
-    
-        .gallery-grid img {
-            cursor: pointer;
-        }
-    </style>
-    
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-    
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-    
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-    
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("demo");
-            let captionText = document.getElementById("caption");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            captionText.innerHTML = dots[slideIndex-1].alt;
-        }
-    
-        function showGallery() {
-            // Hide slides and show gallery grid
-            let slides = document.getElementsByClassName("mySlides");
-            let gallery = document.getElementsByClassName("gallery-grid")[0];
-    
-            // Hide the slides
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-    
-            // Show the gallery
-            gallery.style.display = "flex";
-        }
-    
-        // Show the slides and go to the clicked image
-        function showSlidesFromGallery(imageIndex) {
-            let slides = document.getElementsByClassName("mySlides");
-            let gallery = document.getElementsByClassName("gallery-grid")[0];
-    
-            // Hide the gallery and show the slides again
-            gallery.style.display = "none";
-    
-            // Show the corresponding slide
-            slideIndex = imageIndex;
-            showSlides(slideIndex);
-    
-            // Show the slides container
-            let container = document.querySelector(".container");
-            container.style.display = "block";
-        }
-    </script>
-
+    <script src="assets/js/slideshow_gallery.js"></script>
 
     <!-- Footer Section -->
     <footer>

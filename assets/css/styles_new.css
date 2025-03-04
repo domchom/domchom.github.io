@@ -45,6 +45,8 @@ header .name {
     padding: 10px;
     height: 100%;
     position: relative;
+    top: 0;
+    left: 0;
 }
 
 /* Image and carousel area */
