@@ -90,12 +90,15 @@
 
         .gallery {
             position: absolute;
-            top: 0;
-            left: 33.33%;
-            width: 33.33%;
+            left: 33%;
+            width: 33%;
             height: 100%;
-            cursor: pointer;
+            bottom: 0;
             color: transparent;
+        }
+
+        .gallery:hover {
+            background-color: rgba(0, 0, 0, 0.1);
         }
 
         .mySlides img {
@@ -160,17 +163,48 @@
             <!-- Container for the image gallery -->
             <div class="container">
                 <!-- Full-width images with number text -->
+                 
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9043-Pano-positive.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9084-Pano-positive.jpg" style="width:100%">
+                </div>
                 <div class="mySlides">
                     <img src="assets/images/from_the_lake/_MG_9207-Pano-positive.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9296-positive.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9393-Pano-positive-high-quality-2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9399-Pano-positive-high-quality-2.jpg" style="width:100%">
                 </div>
                 <div class="mySlides">
                     <img src="assets/images/from_the_lake/_MG_9405-Pano-positive-high-quality-2.jpg" style="width:100%">
                 </div>
                 <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9411-Pano-positive-high-quality-2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9417-Pano-positive-high-quality-2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
                     <img src="assets/images/from_the_lake/_MG_9423-Pano-positive-high-quality-2.jpg" style="width:100%">
                 </div>
                 <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9429-Pano-positive-high-quality-2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9435-Pano-positive-high-quality-2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
                     <img src="assets/images/from_the_lake/_MG_9454-Pano-positive.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9499-Pano-positive.jpg" style="width:100%">
                 </div>
     
                 <!-- Next and previous buttons -->
@@ -182,10 +216,20 @@
             <!-- Gallery section hidden by default -->
             <div class="gallery-grid" style="display: none;">
                 <div class="grid-container">
-                    <img src="assets/images/from_the_lake/_MG_9207-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(1)" />
-                    <img src="assets/images/from_the_lake/_MG_9405-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(2)" />
-                    <img src="assets/images/from_the_lake/_MG_9423-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(3)" />
-                    <img src="assets/images/from_the_lake/_MG_9454-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(4)" />
+                    <img src="assets/images/from_the_lake/_MG_9043-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(1)" />
+                    <img src="assets/images/from_the_lake/_MG_9084-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(2)" />
+                    <img src="assets/images/from_the_lake/_MG_9207-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(3)" />
+                    <img src="assets/images/from_the_lake/_MG_9296-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(4)" />
+                    <img src="assets/images/from_the_lake/_MG_9393-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(5)" />
+                    <img src="assets/images/from_the_lake/_MG_9399-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(6)" />
+                    <img src="assets/images/from_the_lake/_MG_9405-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(7)" />
+                    <img src="assets/images/from_the_lake/_MG_9411-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(8)" />
+                    <img src="assets/images/from_the_lake/_MG_9417-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(9)" />
+                    <img src="assets/images/from_the_lake/_MG_9423-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(10)" />
+                    <img src="assets/images/from_the_lake/_MG_9429-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(11)" />
+                    <img src="assets/images/from_the_lake/_MG_9435-Pano-positive-high-quality-2.jpg" class="grid-item" onclick="showSlidesFromGallery(12)" />
+                    <img src="assets/images/from_the_lake/_MG_9454-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(13)" />
+                    <img src="assets/images/from_the_lake/_MG_9499-Pano-positive.jpg" class="grid-item" onclick="showSlidesFromGallery(14)" />
                     <!-- Add more images here if needed -->
                 </div>
             </div>
