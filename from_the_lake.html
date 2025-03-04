@@ -17,6 +17,8 @@
         [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }
         [touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
     </style>
+
+    <!-- for navigation-->
     <style>
         body {
             font-family: 'Lato';
@@ -30,45 +32,70 @@
         nav a:hover {
             color: gray;
         }
-        .content img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        }
     </style>
-        <!-- carousel -->
+
+    <!-- carousel -->
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        .carousel-container {
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Ensure the container is positioned relatively */
+        .image-area {
             position: relative;
-            width: 90%;
-            margin: auto;
-            overflow: hidden;
+            max-width: 80vw; /* Reduce width slightly */
+            max-height: 95vh; /* Ensure it doesn't push beyond viewport */
+            overflow: hidden; /* Hide any overflow */
+            width:auto;
         }
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        
+        /* Ensure images do not exceed viewport width */
+        .container {
+            position: relative;
+            max-width: 80vw; /* Keep consistent with .image-area */
+            max-height: 100%;
+            width:auto;
+            overflow: hidden; /* Prevent any unnecessary scrollbars */
         }
-        .carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* This preserves the aspect ratio */
-            border-left: 1px solid #f2f2f2;
-            border-right: 1px solid #f2f2f2;
-        }
-        .prev, .next {
+                
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
+            transform: translateY(-50%); /* Centers the arrows vertically */
+            width: auto;
             padding: 10px;
-            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: background 0.3s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.3)
         }
-        .prev { left: 10px; }
-        .next { right: 10px; }
+        
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .mySlides img {
+            height: auto;
+            width: auto;
+            display: block;
+        }
+        .mySlides:first-child { display: block; }
     </style>
+
 </head>
 
 <body>
@@ -90,33 +117,62 @@
                 <a href="./midwest_auto.html"><i>midwest auto</i></a> <br>
             </nav>
         </div>
-
         <!-- Image Area -->
         <div class="image-area">
-            <div class="carousel-container">
-                <button class="prev" onclick="prevSlide()">&#10094;</button>
-                <div class="carousel" id="carousel">
-                    <img src="./assets/images/from_the_lake/_MG_9207-Pano-positive.jpeg" alt="Canoes stacked in the snow">
-                    <img src="./assets/images/from_the_lake/_MG_9405-Pano-positive-high-quality-2.jpg" alt="Two ducks framed under train tracks">
-                    <img src="./assets/images/from_the_lake/_MG_9454-Pano-positive.jpg" alt="[TODO]">
-                    <img src="./assets/images/from_the_lake/_MG_9423-Pano-positive-high-quality-2.jpg" alt="[TODO]">
+            <!-- Container for the image gallery -->
+            <div class="container">
+                <!-- Full-width images with number text -->
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9207-Pano-positive.jpeg" style="width:100%">
                 </div>
-                <button class="next" onclick="nextSlide()">&#10095;</button>
+            
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9405-Pano-positive-high-quality-2.jpg" style="width:100%">
+                </div>
+            
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9423-Pano-positive-high-quality-2.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <img src="assets/images/from_the_lake/_MG_9454-Pano-positive.jpg" style="width:100%">
+                </div>
+            
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
             </div>
             <script>
-                let index = 0;
-                function showSlide() {
-                    const carousel = document.getElementById("carousel");
-                    const totalImages = carousel.children.length;
-                    carousel.style.transform = `translateX(${-index * 100}%)`;
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                // Next/previous controls
+                function plusSlides(n) {
+                showSlides(slideIndex += n);
                 }
-                function prevSlide() {
-                    index = (index > 0) ? index - 1 : document.getElementById("carousel").children.length - 1;
-                    showSlide();
+
+                // Thumbnail image controls
+                function currentSlide(n) {
+                showSlides(slideIndex = n);
                 }
-                function nextSlide() {
-                    index = (index < document.getElementById("carousel").children.length - 1) ? index + 1 : 0;
-                    showSlide();
+
+                function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("demo");
+                let captionText = document.getElementById("caption");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                captionText.innerHTML = dots[slideIndex-1].alt;
                 }
             </script>
         </div>
