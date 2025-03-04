@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="/Users/domchom/Documents/GitHub/domchom.github.io/backend/styles.css" >
+    <link rel="stylesheet" type="text/css" href="/Users/domchom/Documents/GitHub/domchom.github.io/backend/styles_new.css" >
 
     <title>domchom.com</title>
 
@@ -36,37 +36,90 @@
         display: block;
         }
     </style>
+        <!-- carousel -->
+        <style>
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+            .carousel-container {
+                position: relative;
+                width: 90%;
+                margin: auto;
+                overflow: hidden;
+            }
+            .carousel {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+            .carousel img {
+                width: 100%;
+                border-radius: 10px;
+            }
+            .prev, .next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+            }
+            .prev { left: 10px; }
+            .next { right: 10px; }
+        </style>
 </head>
 
 <body>
-    <div id="doc" class="yui-t1">
-        <div id="hd">
-        <div id="header"><h1><a href="/Users/domchom/Documents/GitHub/domchom.github.io/index.html" style="text-decoration: none; color: inherit;">Dominic Chomchai</a></h1></div>
+    <!-- Header Section -->
+    <header>
+        <div class="title">Dominic Chomchai</div>
+        <div class="name"></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Left Menu -->
+        <div class="left-menu">
+            <nav style="text-align: left;">
+                <a href="/Users/domchom/Documents/GitHub/domchom.github.io/index.html" "><i>home</i></a> <br>
+                <a href="/Users/domchom/Documents/GitHub/domchom.github.io/aboutme.html"><i>about</i></a> <br>
+                <br>
+                <a href="./from_the_lake.html" style="color: lightblue;"><i>from the lake</i></a> <br>
+                <a href="./midwest_auto.html"><i>midwest auto</i></a> <br>
+            </nav>
         </div>
-        <div id="bd">
-        <div id="yui-main">
-            <div class="yui-b">
-            <div class="content">
-                <img src="/Users/domchom/Documents/GitHub/domchom.github.io/images/from_the_lake/_MG_9207-Pano-positive.jpeg" alt="Canoes stacked in the snow">
-            </div>
-            </div>
-        </div>
-        <div class="yui-b">
-            <div id="secondary"></div>
-                <div style="position: absolute; left: 0; top: 0; padding: 0px;">
-                    <nav style="text-align: left;">
-                        <a href="/Users/domchom/Documents/GitHub/domchom.github.io/index.html"><i>home</i></a> <br>
-                        <a href="/Users/domchom/Documents/GitHub/domchom.github.io/aboutme.html"><i>about</i></a> <br>
-                        <br>
-                        <a href="./from_the_lake.html" style="color: lightblue;"><i>from the lake</i></a> <br>
-                        <a href="./midwest_auto.html"><i>midwest auto</i></a> <br>
-                    </nav>
+
+        <!-- Image Area -->
+        <div class="image-area">
+            <div class="carousel-container">
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <div class="carousel" id="carousel">
+                    <img src="/Users/domchom/Documents/GitHub/domchom.github.io/images/from_the_lake/_MG_9207-Pano-positive.jpeg" alt="Canoes stacked in the snow">
                 </div>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+            </div>
+            <script>
+                let index = 0;
+                function showSlide() {
+                    const carousel = document.getElementById("carousel");
+                    const totalImages = carousel.children.length;
+                    carousel.style.transform = `translateX(${-index * 100}%)`;
+                }
+                function prevSlide() {
+                    index = (index > 0) ? index - 1 : document.getElementById("carousel").children.length - 1;
+                    showSlide();
+                }
+                function nextSlide() {
+                    index = (index < document.getElementById("carousel").children.length - 1) ? index + 1 : 0;
+                    showSlide();
+                }
+            </script>
         </div>
-        </div>
-        <div id="ft">
-        <div id="footer">Footer</div>
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p></p>
+    </footer>
 </body>
 
 </html>

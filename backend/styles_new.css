@@ -1,0 +1,98 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general layout */
+body {
+    font-family: 'Late';
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 10px;
+    font-size: 18px;
+}
+
+header .name {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+}
+
+/* Main content area */
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Left menu column */
+.left-menu {
+    width: 200px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    height: 100%;
+    position: relative;
+}
+
+/* Image and carousel area */
+.image-area {
+    flex: 1;
+    padding: 20px;
+    background-color: #f2f2f2;
+    overflow: auto;
+    margin-right: 5vw;
+}
+
+/* Footer */
+footer {
+    height: 50px;
+    background-color: #f2f2f2;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-menu {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-area {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 14px;
+    }
+
+    .left-menu {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .image-area {
+        padding: 5px;
+    }
+}
