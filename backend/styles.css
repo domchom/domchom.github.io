@@ -1,7 +1,7 @@
 body {
     text-align: left;
-    margin: 10;
-    padding: 10;
+    margin: 50;
+    padding: 50;
 }
 #ft{clear:both;}
 /* below required for all fluid grids; adjust widths and margins above accordingly */
@@ -9,8 +9,9 @@ body {
 	/* to preserve source-order independence for Gecko */
 	.yui-b{position:relative;
 		flex: 1;
-		min-width: 100px;
-		margin: 0px;
+		min-width: 40px;
+		margin-left: 100px;
+		padding: 0px;
 	}
 	.yui-b{_position:static;} /* for IE < 7 */
 	#yui-main .yui-b{position:static;
@@ -19,6 +20,7 @@ body {
 		min-width: 300px;
 		max-width: 80vw;
 		max-height: 80vh;
+		margin-left: 10px;
 	} 
 
 #yui-main {width:100%;}
@@ -131,12 +133,14 @@ body {
 
 /* Header Styling */
 #header {
-    height: 50px;
+    height: 60px;
     background-color: #f2f2f2;
     display: flex;
     align-items: left;
     padding: 0px;
     justify-content: space-between;
+	margin-left: 100px;
+	margin-top: 100px;
 }
 
 #header h1 {
