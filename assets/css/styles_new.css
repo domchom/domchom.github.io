@@ -154,6 +154,7 @@ header.name {
 /* Add a new cursor to open the gallery button */
 .gallery:hover {
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1)
 }
 
 .mySlides {
