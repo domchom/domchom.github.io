@@ -4,20 +4,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const imageFiles = [
-    "_MG_9043-Pano-positive.jpg",
-    "_MG_9084-Pano-positive.jpg",
-    "_MG_9207-Pano-positive.jpg",
-    "_MG_9296-positive.jpg",
-    "_MG_9393-Pano-positive-high-quality-2.jpg",
-    "_MG_9399-Pano-positive-high-quality-2.jpg",
-    "_MG_9405-Pano-positive-high-quality-2.jpg",
-    "_MG_9411-Pano-positive-high-quality-2.jpg",
-    "_MG_9417-Pano-positive-high-quality-2.jpg",
-    "_MG_9423-Pano-positive-high-quality-2.jpg",
-    "_MG_9429-Pano-positive-high-quality-2.jpg",
-    "_MG_9435-Pano-positive-high-quality-2.jpg",
-    "_MG_9454-Pano-positive.jpg",
-    "_MG_9499-Pano-positive.jpg"
+    "IMG_9043-Pano-positive.jpg",
+    "IMG_9084-Pano-positive.jpg",
+    "IMG_9207-Pano-positive.jpg",
+    "IMG_9296-positive.jpg",
+    "IMG_9393-Pano-positive-high-quality-2.jpg",
+    "IMG_9399-Pano-positive-high-quality-2.jpg",
+    "IMG_9405-Pano-positive-high-quality-2.jpg",
+    "IMG_9411-Pano-positive-high-quality-2.jpg",
+    "IMG_9417-Pano-positive-high-quality-2.jpg",
+    "IMG_9423-Pano-positive-high-quality-2.jpg",
+    "IMG_9429-Pano-positive-high-quality-2.jpg",
+    "IMG_9435-Pano-positive-high-quality-2.jpg",
+    "IMG_9454-Pano-positive.jpg",
+    "IMG_9499-Pano-positive.jpg"
 ];
 
 const basePath = "assets/images/from_the_lake/";
