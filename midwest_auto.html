@@ -17,6 +17,8 @@
         [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }
         [touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
     </style>
+
+    <!-- for navigation-->
     <style>
         body {
             font-family: 'Lato';
@@ -30,43 +32,124 @@
         nav a:hover {
             color: gray;
         }
-        .content img {
-        max-width: 100%;
+        .left-menu {
+            width: 200px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            height: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+    <!-- slideshow -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Ensure the container is positioned relatively */
+        .image-area {
+            position: relative;
+            max-width: 80vw; /* Reduce width slightly */
+            max-height: 95vh; /* Ensure it doesn't push beyond viewport */
+            overflow: hidden; /* Hide any overflow */
+            width:auto;
+        }
+        
+        /* Ensure images do not exceed viewport width */
+        .container {
+            position: relative;
+            max-width: 80vw; /* Keep consistent with .image-area */
+            max-height: 100%;
+            width:auto;
+            overflow: hidden; /* Prevent any unnecessary scrollbars */
+        }
+                
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 25px;
+            transform: translateY(-50%); /* Centers the arrows vertically */
+            width: auto;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: background 0.3s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.3)
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .gallery {
+            position: absolute;
+            left: 33%;
+            width: 33%;
+            height: 100%;
+            bottom: 0;
+            color: transparent;
+        }
+
+        .gallery:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .mySlides img {
+            height: auto;
+            width: auto;
+            display: block;
+        }
+        .mySlides:first-child { display: block; }
+        
+    </style>
+
+    <!-- gallery -->
+    <style>
+    .gallery-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+        max-height: 100vh; /* Make sure the gallery doesn't exceed the viewport height */
+        overflow: auto; /* Allows scrolling if content overflows */
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust size as needed */
+        gap: 5px; /* Reduces vertical and horizontal gap */
+        padding: 5px; /* Adds padding around the grid */}
+
+    .grid-item {
+        width: 100%;
         height: auto;
         display: block;
-        }
+        border: none; /* Removes any border */
+        outline: none; /* Ensures no outline appears */
+        box-shadow: none; /* Removes any shadow effects */
+        border-radius: 0; /* Removes any corner radius */
+    }
+
+    .gallery-grid img {
+        cursor: pointer;
+    }
     </style>
-    <!-- carousel -->
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        .carousel-container {
-            position: relative;
-            width: 90%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* This preserves the aspect ratio */
-        }
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .prev { left: 10px; }
-        .next { right: 10px; }
-    </style>
+
 </head>
 
 <body>
@@ -81,41 +164,31 @@
         <!-- Left Menu -->
         <div class="left-menu">
             <nav style="text-align: left;">
-                <a href="./index.html" "><i>home</i></a> <br>
+                <a href="./index.html"><i>home</i></a> <br>
                 <a href="./aboutme.html"><i>about</i></a> <br>
                 <br>
                 <a href="./from_the_lake.html"><i>from the lake</i></a> <br>
-                <a href="./midwest_auto.html" style="color: #228B22;"><i><b>midwest auto</b></i></a> <br>
+                <a href="./midwest_auto.html" style="color:  #228B22;" ><i><b>midwest auto</b></i></a> <br>
             </nav>
         </div>
-
         <!-- Image Area -->
         <div class="image-area">
-            <div class="carousel-container">
-                <button class="prev" onclick="prevSlide()">&#10094;</button>
-                <div class="carousel" id="carousel">
-                    <img src="assets/images/midwest_auto/_MG_9147-Pano-positive.jpg" alt="old VW Beetle at Percy's">
-                </div>
-                <button class="next" onclick="nextSlide()">&#10095;</button>
+            <div class="container" id="slideshow-container">
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="gallery" onclick="showGallery()">&#10095;</a>
             </div>
-            <script>
-                let index = 0;
-                function showSlide() {
-                    const carousel = document.getElementById("carousel");
-                    const totalImages = carousel.children.length;
-                    carousel.style.transform = `translateX(${-index * 100}%)`;
-                }
-                function prevSlide() {
-                    index = (index > 0) ? index - 1 : document.getElementById("carousel").children.length - 1;
-                    showSlide();
-                }
-                function nextSlide() {
-                    index = (index < document.getElementById("carousel").children.length - 1) ? index + 1 : 0;
-                    showSlide();
-                }
-            </script>
+        </div>    
+            <!-- Gallery section hidden by default -->
+            <div class="gallery-grid" style="display: none;">
+                <div class="grid-container" id="gallery-container">
+                </div>
+            </div>
+            <script src="assets/js/midwest_auto.js"></script>
         </div>
     </div>
+    <script src="assets/js/slideshow_gallery.js"></script>
 
     <!-- Footer Section -->
     <footer>
