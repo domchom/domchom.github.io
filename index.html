@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/styles_new.css" >
 
     <title>domchom.com</title>
+    <button class="hamburger">☰</button>  <!-- Hamburger button -->
 
     <!-- touch actions for mobile browser-->
     <style>
@@ -70,6 +71,17 @@
     <footer>
         <p></p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.querySelector(".hamburger");
+            const leftMenu = document.querySelector(".left-menu");
+
+            hamburger.addEventListener("click", function() {
+                leftMenu.classList.toggle("open");
+            });
+        });
+    </script>
 </body>
 
 </html>

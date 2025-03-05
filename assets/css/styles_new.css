@@ -12,7 +12,7 @@
 
 /* Body and general layout */
 body {
-    font-family: 'Lato', sans-serif;;
+    font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -28,10 +28,24 @@ header {
     color: #333;
     padding: 10px;
     font-size: 18px;
+    position: relative; /* Added relative positioning */
 }
 
 header .name {
     margin-left: 10px;
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;  /* Hide by default */
+    cursor: pointer;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;  /* Ensure it's above other elements */
 }
 
 /* Main content area */
@@ -48,6 +62,7 @@ header .name {
     padding: 10px;
     height: 100%;
     position: relative;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Image and carousel area */
@@ -59,6 +74,7 @@ header .name {
     margin-right: 5vw;
     size: 100%;
 }
+
 /* Footer */
 footer {
     height: 50px;
@@ -74,26 +90,36 @@ footer {
     .main-content {
         flex-direction: column;
     }
-
-    .image-area {
-        padding: 10px; /* Adjusted padding for responsiveness */
-    }
-    }
-
+    
     .image-area {
         padding: 10px;
     }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .left-menu {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 100vh;
+        background-color: var(--bg-color);
+        transition: left 0.3s ease-in-out;
+    }
+    
+    .left-menu.open {
+        left: 0;
+    }
+}
 
 @media (max-width: 480px) {
     header {
         font-size: 14px;
     }
-
-    .image-area {
-        padding: 5px; /* Adjusted padding for responsiveness */
-    }
-    }
-
+    
     .image-area {
         padding: 5px;
     }
+}
