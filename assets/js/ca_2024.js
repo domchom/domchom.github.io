@@ -105,7 +105,7 @@ const imageFiles = [
     "241225_cA1-portra400_241225_raw035-positive-Edit.jpg"
 ];
 
-const basePath = "assets/images/from_the_lake/";
+const basePath = "assets/images/cali_2024/";
 
 function generateSlides() {
     const slideshowContainer = document.getElementById("slideshow-container");
