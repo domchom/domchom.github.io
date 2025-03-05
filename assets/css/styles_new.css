@@ -15,11 +15,30 @@
     --hamburger-size: 24px;
 }
 
+/* Touch Actions for Mobile Browser */
+[touch-action="none"] { touch-action: none; }
+[touch-action="auto"] { touch-action: auto; }
+[touch-action="pan-x"] { touch-action: pan-x; }
+[touch-action="pan-y"] { touch-action: pan-y; }
+[touch-action="pan-x pan-y"],
+[touch-action="pan-y pan-x"] { touch-action: pan-x pan-y; }
+
 /* Body and general layout */
 body {
     font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Navigation */
+nav a {
+    text-decoration: none;
+    color: black;
+}
+nav a:hover {
+    color: gray;
 }
 
 /* Header */
@@ -70,14 +89,99 @@ header .name {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Image and carousel area */
+/* Image and slide show area */
 .image-area {
     flex: 1;
-    padding: 0;
-    background-color: var(--bg-color);
-    overflow: auto;
-    margin-right: 0;
-    size: 100%;
+    position: relative;
+    max-width: 80vw; /* Reduce width slightly */
+    max-height: 95vh; /* Ensure it doesn't push beyond viewport */
+    overflow: hidden; /* Hide any overflow */
+    width: auto;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 5vh;
+    transform: translateY(-50%); /* Centers the arrows vertically */
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+}
+
+/* On hover of next buttons, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* gallery button when press image */
+.gallery {
+    position: absolute;
+    left: 33%;
+    width: 33%;
+    height: 100%;
+    bottom: 0;
+    color: transparent;
+}
+
+/* Add a black background color to the gallery button */
+.gallery:hover {
+    cursor: pointer;
+}
+
+/* The slideshow container */
+.mySlides img {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain; /* Ensures the image is fully visible */
+}
+
+.mySlides:first-child { display: block; }
+
+/*gallery grid*/
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    max-height: 100vh; /* Make sure the gallery doesn't exceed the viewport height */
+    overflow: auto; /* Allows scrolling if content overflows */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust size as needed */
+    gap: 5px; /* Reduces vertical and horizontal gap */
+        padding: 5px; /* Adds padding around the grid */
+    }
+
+.grid-item {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none; /* Removes any border */
+    outline: none; /* Ensures no outline appears */
+    box-shadow: none; /* Removes any shadow effects */
+    border-radius: 0; /* Removes any corner radius */
+}
+
+.gallery-grid img {
+    cursor: pointer;
 }
 
 /* Footer */
