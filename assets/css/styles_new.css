@@ -44,7 +44,7 @@ nav a:hover {
 /* Header */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: calc(var(--header-height) + 40px); /* Reduce the height by 10px */
     background-color: var(--bg-color);
@@ -58,6 +58,12 @@ header.name {
     margin-left: 10px;
 }
 
+.title {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+}
+
 /* Hamburger Menu Button */
 .hamburger {
     display: none;
@@ -67,7 +73,7 @@ header.name {
     border: none;
     color: #228B22;
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: 20px;
     z-index: 1000;
 }
