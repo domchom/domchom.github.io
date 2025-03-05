@@ -15,7 +15,6 @@ body {
     font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
 /* Header */
@@ -68,10 +67,10 @@ header .name {
 /* Image and carousel area */
 .image-area {
     flex: 1;
-    padding: 20px;
+    padding: 0px;
     background-color: var(--bg-color);
     overflow: auto;
-    margin-right: 5vw;
+    margin-right: 0vw;
     size: 100%;
 }
 
@@ -89,10 +88,13 @@ footer {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
+        margin-right: 0%;  /* Further reduce margin for very narrow screens */
     }
     
     .image-area {
-        padding: 10px;
+        padding: 0px;
+        margin-right: 1%;
+        margin-left: 15%;
     }
     
     .hamburger {
@@ -103,14 +105,17 @@ footer {
         position: fixed;
         top: 0;
         left: -200px;
-        width: 200px;
-        height: 100vh;
-        background-color: var(--bg-color);
+        width: auto;
+        height: auto; /* Make height dynamic */
+        max-height: 100vh; /* Ensure it doesn't exceed viewport height */
+        background-color: #C1E1C1;
+        overflow-y: auto; /* Add scroll if content overflows */
         transition: left 0.3s ease-in-out;
     }
     
     .left-menu.open {
         left: 0;
+        z-index: 1000;
     }
 }
 
@@ -121,5 +126,6 @@ footer {
     
     .image-area {
         padding: 5px;
+        margin-right: 2vw;  /* Further reduce margin for very narrow screens */
     }
 }
