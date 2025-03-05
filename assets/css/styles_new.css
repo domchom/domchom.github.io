@@ -280,6 +280,16 @@ footer {
         max-height: 100vh; /* Make sure the gallery doesn't exceed the viewport height */
         overflow: auto; /* Allows scrolling if content overflows */
     }
+
+    .image-area {
+        flex: 1;
+        position: relative;
+        max-width: 100vw; /* Reduce width slightly */
+        max-height: 90vh; /* Ensure it doesn't push beyond viewport */
+        overflow: hidden; /* Hide any overflow */
+        width: auto;
+        align-self: flex-start; /* Align to the top of its area */
+    }
 }
 
 @media (max-width: 480px) {
@@ -304,8 +314,8 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
-    /* Apply hover effect only when width is greater than 767px */
+@media (min-width: 614px) {
+    /* Apply hover effect only when width is greater than 614px */
     .gallery-grid img {
         cursor: pointer;
     }

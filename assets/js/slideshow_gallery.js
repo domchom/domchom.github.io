@@ -4,9 +4,11 @@ const slides = document.getElementsByClassName("mySlides");
 const gallery = document.querySelector(".gallery-grid");
 const slideshow = document.getElementById("slideshow-container");
 
-// Ensure slides exist before initializing
-if (slides.length > 0) {
-    showSlides(slideIndex);
+// Function to show slides only if window size allows
+function initializeSlideshow() {
+    if (window.innerWidth >= 614 && slides.length > 0) {
+        showSlides(slideIndex);
+    }
 }
 
 // Next/Previous slide controls
@@ -23,13 +25,9 @@ function currentSlide(n) {
 function showSlides(n) {
     if (slides.length === 0) return console.warn("No slides found!");
 
-    // Ensure slideIndex is within valid range
     slideIndex = ((n - 1 + slides.length) % slides.length) + 1;
-
-    // Hide all slides
+    
     Array.from(slides).forEach(slide => slide.style.display = "none");
-
-    // Display the correct slide
     slides[slideIndex - 1].style.display = "block";
 }
 
@@ -42,9 +40,9 @@ function showGallery() {
     userToggledGallery = true;
 }
 
-// Show the slides and go to the clicked image
+// Show slides from gallery click
 function showSlidesFromGallery(imageIndex) {
-    if (!gallery || window.innerWidth <= 767) return;
+    if (!gallery || window.innerWidth <= 614) return;
 
     gallery.style.display = "none";
     slideIndex = imageIndex;
@@ -56,16 +54,17 @@ function showSlidesFromGallery(imageIndex) {
     userToggledGallery = false;
 }
 
-// Check the window size and show/hide slideshow or gallery
+// Check window size and toggle display
 function checkWindowSize() {
-    if (userToggledGallery) return; // Skip auto-switch if user manually toggled
+    if (userToggledGallery) return;
 
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 614) {
         if (slideshow) slideshow.style.display = "none";
         if (gallery) gallery.style.display = "block";
     } else {
         if (slideshow) slideshow.style.display = "block";
         if (gallery) gallery.style.display = "none";
+        initializeSlideshow(); // Only initialize when appropriate
     }
 }
 
@@ -77,8 +76,6 @@ window.addEventListener("resize", checkWindowSize);
 
 // Keyboard navigation
 document.addEventListener("keydown", (event) => {
-    console.log("Key pressed:", event.key); // Debugging: check if key presses are detected
-
     switch (event.key) {
         case "ArrowLeft":
             plusSlides(-1);
