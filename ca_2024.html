@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles_new.css">
+
+    <title>domchom.com</title>
+
+    <!-- touch actions for mobile browser-->
+    <style>
+        [touch-action="none"]{ -ms-touch-action: none; touch-action: none; }
+        [touch-action="auto"]{ -ms-touch-action: auto; touch-action: auto; }
+        [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }
+        [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }
+        [touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
+    </style>
+
+    <!-- for navigation-->
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f2f2f2;
+            color: #222;
+        }
+        nav a {
+            text-decoration: none;
+            color: black;
+        }
+        nav a:hover {
+            color: gray;
+        }
+        .left-menu {
+            width: 200px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            height: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+    <!-- slideshow -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Ensure the container is positioned relatively */
+        .image-area {
+            position: relative;
+            max-width: 80vw; /* Reduce width slightly */
+            max-height: 95vh; /* Ensure it doesn't push beyond viewport */
+            overflow: hidden; /* Hide any overflow */
+            width: auto;
+        }
+
+        /* Ensure images fit without being cut off */
+        .container {
+            position: relative;
+            max-width: 80vw; /* Keep consistent with .image-area */
+            max-height: 100%;
+            width: auto;
+            overflow: hidden; /* Prevent any unnecessary scrollbars */
+        }
+
+        /* Ensure images cover the container without stretching */
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures the image is fully visible */
+        }
+                
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            bottom: 0px;
+            transform: translateY(-50%); /* Centers the arrows vertically */
+            width: auto;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: background 0.3s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .gallery {
+            position: absolute;
+            left: 33%;
+            width: 33%;
+            height: 100%;
+            bottom: 0;
+            color: transparent;
+        }
+
+        .gallery:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100vh;
+            object-fit: contain; /* Ensures the image is fully visible */
+        }
+        
+        .mySlides:first-child { display: block; }
+        
+    </style>
+
+    <!-- gallery -->
+    <style>
+    .gallery-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+        max-height: 100vh; /* Make sure the gallery doesn't exceed the viewport height */
+        overflow: auto; /* Allows scrolling if content overflows */
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust size as needed */
+        gap: 5px; /* Reduces vertical and horizontal gap */
+            padding: 5px; /* Adds padding around the grid */
+        }
+
+    .grid-item {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: none; /* Removes any border */
+        outline: none; /* Ensures no outline appears */
+        box-shadow: none; /* Removes any shadow effects */
+        border-radius: 0; /* Removes any corner radius */
+    }
+
+    .gallery-grid img {
+        cursor: pointer;
+    }
+    </style>
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="title">Dominic Chomchai</div>
+        <div class="name"></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Left Menu -->
+        <div class="left-menu">
+            <nav style="text-align: left;">
+                <a href="./index.html"><i>home</i></a> <br>
+                <a href="./aboutme.html"><i>about</i></a> <br>
+                <br>
+                <a href="./from_the_lake.html"><i>from the lake</i></a> <br>
+                <a href="./midwest_auto.html"><i>midwest auto</i></a> <br>
+                <br>
+                <a href="./ca_2024.html" style="color: #228B22;"><i><b>cali 2024</b></i></a> <br>
+                <a href="./co_2024.html"><i>colorado 2024</i></a> <br>
+                <a href="./euro_2024.html"><i>euro 2024</i></a> <br>
+            </nav>
+        </div>
+        <!-- Image Area -->
+        <div class="image-area">
+            <div class="container" id="slideshow-container">
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="gallery" onclick="showGallery()">&#10096;</a>
+            </div>
+        </div>    
+            <!-- Gallery section hidden by default -->
+            <div class="gallery-grid" style="display: none;">
+                <div class="grid-container" id="gallery-container">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="assets/js/ca_2024.js"></script>
+    <script src="assets/js/slideshow_gallery.js"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p></p>
+    </footer>
+</body>
+
+</html>
