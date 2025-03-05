@@ -12,7 +12,7 @@
     --menu-width: 200px;
     --header-height: 60px;
     --footer-height: 50px;
-    --hamburger-size: 24px;
+    --hamburger-size: 48px;
 }
 
 /* Touch Actions for Mobile Browser */
@@ -78,7 +78,7 @@ header.name {
     border: none;
     color: #228B22;
     position: absolute;
-    top: 20px;
+    top: 00px;
     left: 20px;
     z-index: 1001;
 }
