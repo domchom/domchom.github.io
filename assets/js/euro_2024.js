@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const imageFiles = [
-    "0_001193.jpg",
+    //"0_001193.jpg",
+    "0_002405.jpg",
     "0_001294.jpg",
     "0_001310.jpg",
     "0_001315.jpg",
@@ -42,7 +43,7 @@ const imageFiles = [
     "0_002094.jpg",
     "0_002110.jpg",
     "0_002165.jpg",
-    "0_002167.jpg",
+    //"0_002167.jpg",
     "0_002184.jpg",
     "0_002243.jpg",
     "0_002253.jpg",
@@ -59,9 +60,8 @@ const imageFiles = [
     "0_002369.jpg",
     "0_002376.jpg",
     "0_002393.jpg",
-    "0_002401.jpg",
+    //"0_002401.jpg",
     "0_002402-Pano.jpg",
-    "0_002405.jpg",
     "0_002422.jpg",
     "0_002427.jpg",
     "0_002430.jpg",
@@ -91,7 +91,7 @@ const imageFiles = [
     "0_002824-Edit-high-quality-2.jpg",
     "0_002840-high-quality-2.jpg",
     "0_002878.jpg",
-    "0_002903.jpg",
+    //"0_002903.jpg",
     "0_002905.jpg",
     "0_002939.jpg",
     "0_002952.jpg",

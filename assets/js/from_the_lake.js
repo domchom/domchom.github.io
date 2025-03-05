@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const imageFiles = [
-    "12_IMG_9043-Pano-positive.jpg",
+    "12_IMG_9454-Pano-positive.jpg",
     "12_IMG_9084-Pano-positive.jpg",
     "12_IMG_9207-Pano-positive.jpg",
     "12_IMG_9296-positive.jpg",
@@ -16,8 +16,8 @@ const imageFiles = [
     "12_IMG_9423-Pano-positive-high-quality-2.jpg",
     "12_IMG_9429-Pano-positive-high-quality-2.jpg",
     "12_IMG_9435-Pano-positive-high-quality-2.jpg",
-    "12_IMG_9454-Pano-positive.jpg",
-    "12_IMG_9499-Pano-positive.jpg"
+    "12_IMG_9499-Pano-positive.jpg",
+    "12_IMG_9043-Pano-positive.jpg",
 ];
 
 const basePath = "assets/images/from_the_lake/";

@@ -42,6 +42,11 @@ nav a:hover {
     color: gray;
 }
 
+nav a.active {
+    color: #228B22; /* Change to the color you want */
+    font-weight: bold; /* Optional: Make the active link bold */
+}
+
 /* Header */
 header {
     display: flex;
