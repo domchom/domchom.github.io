@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Use Midwest auto as the home screen -->
+
 <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/styles_new.css" >
+    <link rel="stylesheet" href="./assets/css/styles_new.css">
 
     <title>domchom.com</title>
     <button class="hamburger">☰</button>  <!-- Hamburger button -->
-
 </head>
 
 <body>
@@ -22,19 +25,32 @@
         <!-- Left Menu -->
         <div class="left-menu">
             <nav style="text-align: left;">
+            </nav>
         </div>
-
         <!-- Image Area -->
         <div class="image-area">
-            <img src="assets/images/midwest_auto/12_IMG_9147-Pano-positive.jpg" alt="old VW Beetle at Percy's" style="max-width:75vw; max-height:80hw">
+            <div class="container" id="slideshow-container">
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="gallery" onclick="showGallery()">&#10096;</a>
+            </div>
+        </div>    
+            <!-- Gallery section hidden by default -->
+            <div class="gallery-grid" style="display: none;">
+                <div class="grid-container" id="gallery-container">
+                </div>
+            </div>
         </div>
     </div>
+    <script src="assets/js/midwest_auto.js"></script>
+    <script src="assets/js/slideshow_gallery.js"></script>
+    <script src="assets/js/general.js"></script>
 
     <!-- Footer Section -->
     <footer>
         <p></p>
     </footer>
-    <script src="assets/js/general.js"></script>
 </body>
 
 </html>
