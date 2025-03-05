@@ -254,7 +254,7 @@ footer {
     
     .left-menu {
         position: fixed;
-        top: 50px;
+        top: 0px;
         left: -200px;
         width: auto;
         height: 100%;
@@ -267,7 +267,7 @@ footer {
     }
     
     .left-menu.open {
-        left: 0;
+        left: -20px;
         z-index: 1000;
     }
 
