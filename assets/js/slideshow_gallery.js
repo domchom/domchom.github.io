@@ -1,9 +1,15 @@
 let userToggledGallery = false; // Track if user manually opened the gallery
-
 let slideIndex = 1;
-showSlides(slideIndex);
+const slides = document.getElementsByClassName("mySlides");
+const gallery = document.querySelector(".gallery-grid");
+const slideshow = document.getElementById("slideshow-container");
 
-// Next/previous controls
+// Ensure slides exist before initializing
+if (slides.length > 0) {
+    showSlides(slideIndex);
+}
+
+// Next/Previous slide controls
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
@@ -15,105 +21,74 @@ function currentSlide(n) {
 
 // Show the slide at the given index
 function showSlides(n) {
-    let slides = document.getElementsByClassName("mySlides");
-
-    if (slides.length === 0) {
-        console.warn("No slides found!");
-        return;
-    }
+    if (slides.length === 0) return console.warn("No slides found!");
 
     // Ensure slideIndex is within valid range
-    if (n > slides.length) {
-        slideIndex = 1;
-    } 
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
+    slideIndex = ((n - 1 + slides.length) % slides.length) + 1;
 
     // Hide all slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+    Array.from(slides).forEach(slide => slide.style.display = "none");
 
-    // Check if the slide exists before modifying it
-    if (slides[slideIndex - 1]) {
-        slides[slideIndex - 1].style.display = "block";
-    } else {
-        console.error("Slide index out of range:", slideIndex);
-    }
+    // Display the correct slide
+    slides[slideIndex - 1].style.display = "block";
 }
 
 // Show the gallery grid
 function showGallery() {
-    let slides = document.getElementsByClassName("mySlides");
-    let gallery = document.getElementsByClassName("gallery-grid")[0];
-
-    // Hide the slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    // Show the gallery
+    if (!gallery) return;
+    
+    Array.from(slides).forEach(slide => slide.style.display = "none");
     gallery.style.display = "flex";
-    userToggledGallery = true; // User manually switched to gallery mode
+    userToggledGallery = true;
 }
 
 // Show the slides and go to the clicked image
 function showSlidesFromGallery(imageIndex) {
-    let slides = document.getElementsByClassName("mySlides");
-    let gallery = document.getElementsByClassName("gallery-grid")[0];
+    if (!gallery || window.innerWidth <= 767) return;
 
-    if (window.innerWidth > 767) {
-        // Hide the gallery and show the slides again
-        gallery.style.display = "none";
+    gallery.style.display = "none";
+    slideIndex = imageIndex;
+    showSlides(slideIndex);
 
-        // Show the corresponding slide
-        slideIndex = imageIndex;
-        showSlides(slideIndex);
+    const container = document.querySelector(".container");
+    if (container) container.style.display = "block";
 
-        // Show the slides container
-        let container = document.querySelector(".container");
-        container.style.display = "block";
-
-        userToggledGallery = false; // User switched back to slideshow
-    }
+    userToggledGallery = false;
 }
 
-// Check the window size and show/hide the slideshow or gallery
+// Check the window size and show/hide slideshow or gallery
 function checkWindowSize() {
-    const slideshow = document.getElementById("slideshow-container");
-    const gallery = document.querySelector(".gallery-grid");
+    if (userToggledGallery) return; // Skip auto-switch if user manually toggled
 
-    if (!userToggledGallery) { 
-        // Auto-switch only if user hasn't manually selected gallery mode
-        if (window.innerWidth < 768) {
-            if (slideshow) slideshow.style.display = "none";
-            if (gallery) gallery.style.display = "block";
-        } else {
-            if (slideshow) slideshow.style.display = "block";
-            if (gallery) gallery.style.display = "none";
-        }
+    if (window.innerWidth < 768) {
+        if (slideshow) slideshow.style.display = "none";
+        if (gallery) gallery.style.display = "block";
+    } else {
+        if (slideshow) slideshow.style.display = "block";
+        if (gallery) gallery.style.display = "none";
     }
 }
 
 // Run on page load
-window.onload = checkWindowSize;
+window.addEventListener("load", checkWindowSize);
 
 // Run on window resize
-window.onresize = checkWindowSize;
+window.addEventListener("resize", checkWindowSize);
 
 // Keyboard navigation
-document.addEventListener("DOMContentLoaded", function () {
-    document.addEventListener("keydown", function (event) {
-        console.log("Key pressed:", event.key); // Debugging: check if key presses are detected
-        if (event.key === "ArrowLeft") {
-            plusSlides(-1); // Move to the previous slide
-        } else if (event.key === "ArrowRight") {
-            plusSlides(1); // Move to the next slide
-        } else if (event.key === "Escape") {
-            showGallery(); // Show the gallery grid
-        } else if (event.key === "ArrowDown") {
-            showGallery(); // Show the gallery grid
-        }
-    });
+document.addEventListener("keydown", (event) => {
+    console.log("Key pressed:", event.key); // Debugging: check if key presses are detected
+
+    switch (event.key) {
+        case "ArrowLeft":
+            plusSlides(-1);
+            break;
+        case "ArrowRight":
+            plusSlides(1);
+            break;
+        case "Escape":
+        case "ArrowDown":
+            showGallery();
+            break;
+    }
 });
