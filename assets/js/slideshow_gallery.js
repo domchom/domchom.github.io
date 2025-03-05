@@ -12,21 +12,32 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    let i;
     let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("demo");
-    let captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
+
+    if (slides.length === 0) {
+        console.warn("No slides found!");
+        return;
+    }
+
+    // Ensure slideIndex is within valid range
+    if (n > slides.length) {
+        slideIndex = 1;
+    } 
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+
+    // Check if the slide exists before modifying it
+    if (slides[slideIndex - 1]) {
+        slides[slideIndex - 1].style.display = "block";
+    } else {
+        console.error("Slide index out of range:", slideIndex);
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
 function showGallery() {
@@ -59,3 +70,17 @@ function showSlidesFromGallery(imageIndex) {
     let container = document.querySelector(".container");
     container.style.display = "block";
 }
+document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("keydown", function (event) {
+        console.log("Key pressed:", event.key); // Debugging: check if key presses are detected
+        if (event.key === "ArrowLeft") {
+            plusSlides(-1); // Move to the previous slide
+        } else if (event.key === "ArrowRight") {
+            plusSlides(1); // Move to the next slide
+        } else if (event.key === "Escape") {
+            showGallery(); // Show the gallery grid
+        } else if (event.key === "ArrowDown") {
+            showGallery(); // Show the gallery grid
+        }
+    });
+});
