@@ -8,6 +8,11 @@
 /* CSS Variables */
 :root {
     --bg-color: #f2f2f2;
+    --text-color: #333;
+    --menu-width: 200px;
+    --header-height: 60px;
+    --footer-height: 50px;
+    --hamburger-size: 24px;
 }
 
 /* Body and general layout */
@@ -22,12 +27,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: var(--header-height);
     background-color: var(--bg-color);
-    color: #333;
+    color: var(--text-color);
     padding: 10px;
     font-size: 18px;
-    position: relative; /* Added relative positioning */
+    position: relative;
 }
 
 header .name {
@@ -36,15 +41,16 @@ header .name {
 
 /* Hamburger Menu Button */
 .hamburger {
-    display: none;  /* Hide by default */
+    display: none;
     cursor: pointer;
-    font-size: 24px;
+    font-size: var(--hamburger-size);
     background: transparent;
     border: none;
+    color: #228B22;
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 1000;  /* Ensure it's above other elements */
+    z-index: 1000;
 }
 
 /* Main content area */
@@ -56,7 +62,7 @@ header .name {
 
 /* Left menu column */
 .left-menu {
-    width: 200px;
+    width: var(--menu-width);
     background-color: var(--bg-color);
     padding: 10px;
     height: 100%;
@@ -67,18 +73,18 @@ header .name {
 /* Image and carousel area */
 .image-area {
     flex: 1;
-    padding: 0px;
+    padding: 0;
     background-color: var(--bg-color);
     overflow: auto;
-    margin-right: 0vw;
+    margin-right: 0;
     size: 100%;
 }
 
 /* Footer */
 footer {
-    height: 50px;
+    height: var(--footer-height);
     background-color: var(--bg-color);
-    color: #333;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,11 +94,11 @@ footer {
 @media (max-width: 768px) {
     .main-content {
         flex-direction: column;
-        margin-right: 0%;  /* Further reduce margin for very narrow screens */
+        margin-right: 0;
     }
     
     .image-area {
-        padding: 0px;
+        padding: 0;
         margin-right: 1%;
         margin-left: 15%;
     }
@@ -106,10 +112,10 @@ footer {
         top: 0;
         left: -200px;
         width: auto;
-        height: auto; /* Make height dynamic */
-        max-height: 100vh; /* Ensure it doesn't exceed viewport height */
+        height: auto;
+        max-height: 100vh;
         background-color: #C1E1C1;
-        overflow-y: auto; /* Add scroll if content overflows */
+        overflow-y: auto;
         transition: left 0.3s ease-in-out;
     }
     
@@ -126,6 +132,6 @@ footer {
     
     .image-area {
         padding: 5px;
-        margin-right: 2vw;  /* Further reduce margin for very narrow screens */
+        margin-right: 2vw;
     }
 }
