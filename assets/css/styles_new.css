@@ -5,9 +5,14 @@
     box-sizing: border-box;
 }
 
+/* CSS Variables */
+:root {
+    --bg-color: #f2f2f2;
+}
+
 /* Body and general layout */
 body {
-    font-family: 'Late';
+    font-family: 'Lato', sans-serif;;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -19,16 +24,14 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    background-color: #f2f2f2;
+    background-color: var(--bg-color);
     color: #333;
     padding: 10px;
     font-size: 18px;
 }
 
 header .name {
-    position: absolute;
-    bottom: 10px;
-    left: 0px;
+    margin-left: 10px;
 }
 
 /* Main content area */
@@ -41,28 +44,25 @@ header .name {
 /* Left menu column */
 .left-menu {
     width: 200px;
-    background-color: #f2f2f2;
+    background-color: var(--bg-color);
     padding: 10px;
     height: 100%;
     position: relative;
-    top: 0;
-    left: 0;
 }
 
 /* Image and carousel area */
 .image-area {
     flex: 1;
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: var(--bg-color);
     overflow: auto;
     margin-right: 5vw;
     size: 100%;
 }
-
 /* Footer */
 footer {
     height: 50px;
-    background-color: #f2f2f2;
+    background-color: var(--bg-color);
     color: #333;
     display: flex;
     justify-content: center;
@@ -75,27 +75,25 @@ footer {
         flex-direction: column;
     }
 
-    .left-menu {
-        width: 100%;
-        height: auto;
+    .image-area {
+        padding: 10px; /* Adjusted padding for responsiveness */
+    }
     }
 
     .image-area {
         padding: 10px;
     }
-}
 
 @media (max-width: 480px) {
     header {
         font-size: 14px;
     }
 
-    .left-menu {
-        width: 100%;
-        padding: 5px;
+    .image-area {
+        padding: 5px; /* Adjusted padding for responsiveness */
+    }
     }
 
     .image-area {
         padding: 5px;
     }
-}
