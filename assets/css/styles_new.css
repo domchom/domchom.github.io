@@ -97,6 +97,7 @@ header .name {
     max-height: 95vh; /* Ensure it doesn't push beyond viewport */
     overflow: hidden; /* Hide any overflow */
     width: auto;
+    align-self: flex-start; /* Align to the top of its area */
 }
 
 
@@ -105,18 +106,11 @@ header .name {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 5vh;
-    transform: translateY(-50%); /* Centers the arrows vertically */
-    width: auto;
-    padding: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
+    height: 100%;
+    width: 33%;
+    color: transparent;
     user-select: none;
     -webkit-user-select: none;
-    transition: background 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Position the "next button" to the right */
@@ -124,10 +118,15 @@ header .name {
     right: 0;
 }
 
+/* Position the "prev button" to the left */
+.prev {
+    left: 0;
+}
+
 /* On hover of next buttons, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* gallery button when press image */
@@ -150,9 +149,20 @@ header .name {
     width: 100%;
     height: 100vh;
     object-fit: contain; /* Ensures the image is fully visible */
+    align-self: flex-start; /* Aligns the image to the top of its container */
+    display: block; /* Ensures there's no extra space below the image */
+    margin-top: 0; /* Removes any margin that might be affecting the alignment */
 }
 
 .mySlides:first-child { display: block; }
+
+.slideshow-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 
 /*gallery grid*/
 .gallery-grid {
