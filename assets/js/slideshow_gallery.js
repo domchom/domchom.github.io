@@ -1,6 +1,8 @@
 let slideIndex = 1;
 showSlides(slideIndex);
 
+let userToggledGallery = false; // Track if user manually opened the gallery
+
 // Next/previous controls
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -11,6 +13,7 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
+// Show the slide at the given index
 function showSlides(n) {
     let slides = document.getElementsByClassName("mySlides");
 
@@ -40,8 +43,8 @@ function showSlides(n) {
     }
 }
 
+// Show the gallery grid
 function showGallery() {
-    // Hide slides and show gallery grid
     let slides = document.getElementsByClassName("mySlides");
     let gallery = document.getElementsByClassName("gallery-grid")[0];
 
@@ -52,6 +55,7 @@ function showGallery() {
 
     // Show the gallery
     gallery.style.display = "flex";
+    userToggledGallery = true; // User manually switched to gallery mode
 }
 
 // Show the slides and go to the clicked image
@@ -59,17 +63,46 @@ function showSlidesFromGallery(imageIndex) {
     let slides = document.getElementsByClassName("mySlides");
     let gallery = document.getElementsByClassName("gallery-grid")[0];
 
-    // Hide the gallery and show the slides again
-    gallery.style.display = "none";
+    if (window.innerWidth > 767) {
+        // Hide the gallery and show the slides again
+        gallery.style.display = "none";
 
-    // Show the corresponding slide
-    slideIndex = imageIndex;
-    showSlides(slideIndex);
+        // Show the corresponding slide
+        slideIndex = imageIndex;
+        showSlides(slideIndex);
 
-    // Show the slides container
-    let container = document.querySelector(".container");
-    container.style.display = "block";
+        // Show the slides container
+        let container = document.querySelector(".container");
+        container.style.display = "block";
+
+        userToggledGallery = false; // User switched back to slideshow
+    }
 }
+
+// Check the window size and show/hide the slideshow or gallery
+function checkWindowSize() {
+    const slideshow = document.getElementById("slideshow-container");
+    const gallery = document.querySelector(".gallery-grid");
+
+    if (!userToggledGallery) { 
+        // Auto-switch only if user hasn't manually selected gallery mode
+        if (window.innerWidth < 768) {
+            if (slideshow) slideshow.style.display = "none";
+            if (gallery) gallery.style.display = "block";
+        } else {
+            if (slideshow) slideshow.style.display = "block";
+            if (gallery) gallery.style.display = "none";
+        }
+    }
+}
+
+// Run on page load
+window.onload = checkWindowSize;
+
+// Run on window resize
+window.onresize = checkWindowSize;
+
+// Keyboard navigation
 document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", function (event) {
         console.log("Key pressed:", event.key); // Debugging: check if key presses are detected

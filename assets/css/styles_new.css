@@ -139,7 +139,7 @@ header.name {
     color: transparent;
 }
 
-/* Add a black background color to the gallery button */
+/* Add a new cursor to open the gallery button */
 .gallery:hover {
     cursor: pointer;
 }
@@ -188,10 +188,6 @@ header.name {
     outline: none; /* Ensures no outline appears */
     box-shadow: none; /* Removes any shadow effects */
     border-radius: 0; /* Removes any corner radius */
-}
-
-.gallery-grid img {
-    cursor: pointer;
 }
 
 /* Footer */
@@ -248,5 +244,12 @@ footer {
     .image-area {
         padding: 5px;
         margin-right: 2vw;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Apply hover effect only when width is greater than 767px */
+    .gallery-grid img {
+        cursor: pointer;
     }
 }
