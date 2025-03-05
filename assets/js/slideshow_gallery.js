@@ -1,7 +1,7 @@
+let userToggledGallery = false; // Track if user manually opened the gallery
+
 let slideIndex = 1;
 showSlides(slideIndex);
-
-let userToggledGallery = false; // Track if user manually opened the gallery
 
 // Next/previous controls
 function plusSlides(n) {

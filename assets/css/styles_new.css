@@ -30,6 +30,7 @@ body {
     flex-direction: column;
     background-color: var(--bg-color);
     color: var(--text-color);
+    height: 100vh;
 }
 
 /* Navigation */
@@ -99,7 +100,7 @@ header.name {
     flex: 1;
     position: relative;
     max-width: 80vw; /* Reduce width slightly */
-    max-height: 95vh; /* Ensure it doesn't push beyond viewport */
+    max-height: 90vh; /* Ensure it doesn't push beyond viewport */
     overflow: hidden; /* Hide any overflow */
     width: auto;
     align-self: flex-start; /* Align to the top of its area */
@@ -149,17 +150,29 @@ header.name {
     cursor: pointer;
 }
 
+.mySlides {
+    display: flex;
+    flex-direction: column; /* Stacks images vertically */
+    align-items: center; /* Centers images horizontally */
+    width: 100%;
+}
+
 /* The slideshow container */
 .mySlides img {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     object-fit: contain; /* Ensures the image is fully visible */
-    align-self: flex-start; /* Aligns the image to the top of its container */
     display: block; /* Ensures there's no extra space below the image */
-    margin-top: 0; /* Removes any margin that might be affecting the alignment */
+    margin: 0; /* Removes any margin */
 }
 
+/* Show the first image by default */
 .mySlides:first-child { display: block; }
+
+/* Hide all images except the first one */
+.mySlides img:not(:first-child) {
+    display: none;
+}
 
 .slideshow-container {
     display: flex;
@@ -167,6 +180,7 @@ header.name {
     position: relative;
     width: 100%;
     height: 100%;
+
 }
 
 /*gallery grid*/
