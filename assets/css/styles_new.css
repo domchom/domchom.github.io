@@ -23,9 +23,16 @@
 [touch-action="pan-x pan-y"],
 [touch-action="pan-y pan-x"] { touch-action: pan-x pan-y; }
 
+@font-face {
+    font-family: 'Lato Light';
+    src: url('../assets/fonts/Lato-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
 /* Body and general layout */
 body {
-    font-family: 'Futura Light', sans-serif;
+    font-family: 'Lato Light', sans-serif;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color);
