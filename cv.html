@@ -32,6 +32,10 @@
             margin-bottom: var(--spacing-sm);
         }
 
+        .cv-item h3 {
+            margin-bottom: 2px;
+        }
+
         .cv-date {
             color: #666;
             font-size: 0.9rem;
@@ -61,8 +65,12 @@
     <section class="section">
         <div class="container">
             <div class="cv-header">
-                <h1>Curriculum Vitae</h1>
-                <a href="Chomchai_CV_251201.pdf" class="btn btn-primary" download><i class="fas fa-download"></i>
+                <div>
+                    <h1>Curriculum Vitae</h1>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 5px;">Last updated: December 2025</p>
+                </div>
+                <a href="assets/CV/Chomchai_CV_251212.pdf" class="btn btn-primary" download><i
+                        class="fas fa-download"></i>
                     Download PDF</a>
             </div>
 
@@ -70,43 +78,297 @@
                 <h2>Education</h2>
                 <div class="cv-item">
                     <h3>PhD in Cellular and Molecular Biology</h3>
-                    <span class="cv-date">Aug 2020 - Present</span>
+                    <span class="cv-date">Sept 2020 - Present</span>
                     <p>University of Wisconsin-Madison, Madison, WI</p>
                     <p><em>GPA: 3.864/4.0</em></p>
                 </div>
                 <div class="cv-item">
-                    <h3>BS in Molecular, Cellular, and Developmental Biology</h3>
+                    <h3>B.S. in Molecular, Cellular, and Developmental Biology</h3>
                     <span class="cv-date">Sept 2016 - May 2020</span>
                     <p>University of Michigan, Ann Arbor, MI</p>
-                    <p><em>Honors, Spanish Minor, GPA: 3.664/4.0</em></p>
+                    <p><em>High Honors, Spanish Minor, GPA: 3.664/4.0</em></p>
                 </div>
             </div>
 
             <div class="cv-section">
                 <h2>Research Experience</h2>
                 <div class="cv-item">
-                    <h3>PhD Candidate</h3>
+                    <h3>Graduate Research Assistant</h3>
                     <span class="cv-date">Dec 2020 - Present</span>
-                    <p>Bement Lab, University of Wisconsin-Madison</p>
-                    <p><em>Thesis: The basis of positive feedback during cytokinesis</em></p>
+                    <p>University of Wisconsin-Madison (Advisor: William M. Bement)</p>
+                    <p><em>Thesis: Exploring the mechanism of positive feedback between Ect2 and Rho in cortical
+                            excitability during Xenopus laevis cytokinesis.</em></p>
                     <ul style="margin-left: 20px; list-style-type: disc;">
-                        <li>Investigating the interaction between Rho and Ect2 using live-cell imaging.</li>
-                        <li>Managed lab supplies and communicated with vendors.</li>
-                        <li>Mentored undergraduate researchers.</li>
+                        <li>Investigated Rho-associated kinase (ROCK) as a negative feedback regulator of Ect2 and RhoA
+                            in cortical excitability.</li>
+                        <li>Collaborated with a biological modeling group and co-published work distinguishing between
+                            two mechanistic models of cortical wave propagation.</li>
+                        <li>Co-developed a Python-based pipeline for batch analysis of excitable and oscillatory
+                            dynamics in multichannel time-lapse datasets.</li>
+                        <li>Developed a Python-based, all-in-one image-processing tool for streamlined image conversion
+                            and metadata extraction across commonly used microscopes in the Bement Lab.</li>
+                        <li>Built custom ImageJ/Fiji batch processing and analysis tools to enhance workflow efficiency
+                            and reproducibility in quantitative microscopy experiments.</li>
+                        <li>Served as the de facto lab manager, coordinating supply orders through communication with
+                            lab members, departmental staff, and external vendors.</li>
+                        <li>Mentored undergraduate researchers in molecular biology and microscopy.</li>
                     </ul>
                 </div>
                 <div class="cv-item">
                     <h3>Undergraduate Research Assistant</h3>
                     <span class="cv-date">March 2018 - May 2020</span>
-                    <p>Ming Li Lab, University of Michigan</p>
+                    <p>University of Michigan (Advisor: Ming Li)</p>
                     <p><em>Thesis: The mechanism of the ubiquitination and degradation of lysosomal membrane
                             proteins</em></p>
                     <ul style="margin-left: 20px; list-style-type: disc;">
-                        <li>Conducted whole-genome high-throughput screening using fluorescent microscopy in yeast.</li>
-                        <li>Studied lysosomal membrane protein degradation pathways using Western blot and ubiquitin
-                            blot analysis.</li>
-                        <li>Analyzed flow cytometry data to identify new adaptors.</li>
+                        <li>Conducted a whole genome high-throughput screening to identify proteins involved in the
+                            assembly of the vacuole membrane protein complex Fth1-Fet5 using fluorescent microscopy in
+                            Saccharomyces cerevisiae.</li>
+                        <li>Studied the importance of two distinct lysosomal membrane protein degradation pathways using
+                            fluorescent microscopy, ubiquitin blot analysis, and Western blot analysis. Studied the
+                            effects of different stress conditions on the general composition of lysosome membrane
+                            proteins.</li>
+                        <li>Conducted a genetic screening of PY motif-containing proteins and analyzed with flow
+                            cytometry to identify new adaptors involved in the ubiquitination of lysosomal membrane
+                            cargoes.</li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Outreach Experience</h2>
+                <div class="cv-item">
+                    <h3>Special Olympics College at the University of Michigan</h3>
+                    <span class="cv-date">Sept 2016 - May 2020</span>
+                    <p><strong>Vice President</strong> (May 2019 – May 2020)</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Led operations in collaboration with the executive board, including running weekly meetings,
+                            mentoring new board members, and coordinating cross-university competitions.</li>
+                        <li>Directed recruitment and outreach efforts by organizing recurring student organization fair
+                            booths and engagement events.</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Soccer Coach</strong> (Sept 2017 – May 2020)</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Led inclusive weekly practices for athletes with and without intellectual and developmental
+                            disabilities, fostering skill development and team cohesion.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Work Experience</h2>
+                <div class="cv-item">
+                    <h3>Referee</h3>
+                    <span class="cv-date">Sept 2010 - March 2020</span>
+                    <p>USA Hockey, Mount Pleasant, MI and Ann Arbor, MI</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Officiated competitive hockey games across a wide age range, consistently applying rules and
+                            maintaining fair, safe play under pressure.</li>
+                        <li>De-escalated conflicts and communicated rulings clearly and professionally with coaches and
+                            players.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Leadership, Teaching and Mentoring Experience</h2>
+                <div class="cv-item">
+                    <h3>Research Mentor</h3>
+                    <span class="cv-date">Jan 2023 - Present</span>
+                    <p>Bement Lab, Madison, WI</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Mentor an undergraduate researcher in molecular biology and microscopy techniques, providing
+                            training and ongoing scientific guidance.</li>
+                        <li>Advise on data interpretation, poster presentations and manuscript-style writing for
+                            scholarships.</li>
+                    </ul>
+                </div>
+                <div class="cv-item">
+                    <h3>Teaching Assistant</h3>
+                    <span class="cv-date">Aug 2022 - Dec 2024</span>
+                    <p>University of Wisconsin–Madison</p>
+                    <p style="margin-top: 5px;"><strong>Biology 570 (Cell Biology)</strong> (Aug 2024 – Dec 2024)</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Developed lesson plans and led optional weekly discussions; designed and administered Canvas
+                            quizzes to reinforce lecture and reading concepts.</li>
+                        <li>Held office hours, graded and provided detailed feedback on 100+ written assignments, and
+                            proctored exams.</li>
+                    </ul>
+                    <p style="margin-top: 5px;"><strong>Biology 151 Lab (Intro Biology Lab Section)</strong> (Aug 2022 –
+                        Dec 2022)</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Instructed undergraduates in experimental design and scientific research methods during
+                            weekly three-hour lab sections.</li>
+                        <li>Developed instructional materials, graded lab reports with constructive feedback, and
+                            supported students through office hours and exams.</li>
+                    </ul>
+                </div>
+                <div class="cv-item">
+                    <h3>CMB Graduate Program NSF Workshop Leader</h3>
+                    <span class="cv-date">June 2022 - July 2023</span>
+                    <p>Madison, WI</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Led workshops mentoring graduate students applying to the NSF GRFP, drawing on personal
+                            experience as an Honorable Mention recipient.</li>
+                        <li>Developed instructional materials and provided detailed feedback on personal and research
+                            statements.</li>
+                    </ul>
+                </div>
+                <div class="cv-item">
+                    <h3>Teacher and Co-founder</h3>
+                    <span class="cv-date">Sept 2022 - Nov 2022</span>
+                    <p>After-School Family STEM Program at the Goodman South Library, Madison, WI</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Co-founded and led a 10-week drop-in family STEM program (K–5 with parents) in partnership
+                            with the lead youth librarian, expanding STEM access in an historically underrepresented
+                            community.</li>
+                        <li>Designed adaptable lesson plans and facilitated hands-on experiments across physics,
+                            astronomy, and biology to increase family engagement in STEM.</li>
+                    </ul>
+                </div>
+                <div class="cv-item">
+                    <h3>Virtual Weekend Recruitment Manager</h3>
+                    <span class="cv-date">Jan 2021 and 2022</span>
+                    <p>Cellular and Molecular Biology Recruitment Committee</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Coordinated and scheduled virtual recruitment weekends for a graduate training program,
+                            organizing interviews between prospective students and current graduate trainees.</li>
+                        <li>Designed and hosted virtual social events using Gather.town to facilitate engagement and
+                            community-building among recruits and students.</li>
+                    </ul>
+                </div>
+                <div class="cv-item">
+                    <h3>Biochemistry (MCDB 310) Study Group Facilitator</h3>
+                    <span class="cv-date">Sept 2019 - May 2020</span>
+                    <p>The Science Learning Center at the University of Michigan, Ann Arbor, MI</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Led weekly collaborative study sessions, applying evidence-based learning strategies to
+                            promote active engagement and mastery of course material.</li>
+                        <li>Planned structured agendas and guided group discussions to keep sessions focused and
+                            productive.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Professional Training</h2>
+                <div class="cv-item">
+                    <h3>STEM Public Engagement Course (Public Service Fellows)</h3>
+                    <span class="cv-date">Jan 2022 - Dec 2022</span>
+                    <p>Madison, WI</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Selected for a competitive, yearlong fellowship focused on effective STEM public engagement,
+                            emphasizing asset-based approaches and trust-building with community partners.</li>
+                        <li>Collaborated weekly with a multidisciplinary graduate cohort to develop strategies for
+                            partnering with non-academic organizations and addressing public issues through science.
+                        </li>
+                    </ul>
+                </div>
+                <div class="cv-item">
+                    <h3>WIScience Delta Program Research Mentor Training</h3>
+                    <span class="cv-date">Sept 2021 - Dec 2021</span>
+                    <p>Madison, WI</p>
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Completed formal training in effective research mentorship, including evidence-based
+                            strategies for communication, expectation-setting, and mentor–mentee problem-solving.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Publications</h2>
+                <div class="cv-item">
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Chomchai, D., Leda, M., Golding, A., von Dassow, G., Bement, W.M. & Goryachev, A.G. Rho
+                            GTPase
+                            dynamics distinguish between models of cortical excitability. <em>Current Biology</em>, 35
+                            (6).
+                            doi: 10.1016/j.cub.2025.02.003 (2025).</li>
+                        <li>Yang, X., Reist, L. Chomchai, D., Chen, L., Arines, F. & Li, M. ESCRT, not intralumenal
+                            fragments, sorts ubiquitinated vacuole membrane proteins for degradation. <em>Journal of
+                                Cell
+                                Biology</em>, 220 (8). doi: 10.1083/jcb.202012104 (2021).</li>
+                        <li>Yang, X., Zhang, W., Wen, X., Bulinski, P., Chomchai, D., Arines, F., Liu, Y., Sprenger, S.,
+                            Teis, D., Klionsky, D.J. & Li, M. TORC1 regulates vacuole membrane composition through
+                            ubiquitin-
+                            and ESCRT-dependent microautophagy. <em>Journal of Cell Biology</em>, 219 (3). doi:
+                            10.1083/jcb.201902127 (2020).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Presentations</h2>
+                <div class="cv-item">
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li><strong>Seminar Talk.</strong> Chomchai, D. & Bement, W. Exploring the mechanics of positive
+                            feedback in Ect2-mediated cortical excitability. Cells, Science and Imaging (CSI): Madison.
+                            Madison, WI, Oct 2025</li>
+                        <li><strong>Subgroup Talk: Frontiers in Cytokinesis</strong> (Ten-minute talk). Chomchai, D. &
+                            Bement, W. Exploring the mechanism of positive feedback in cortical excitability. The
+                            American
+                            Society of Cell Biology – Cell Bio 2024, San Diego, CA, Dec 2024.</li>
+                        <li><strong>Seminar Talk.</strong> Chomchai, D. & Bement, W. Positive feedback between Rho and
+                            Ect2
+                            is essential for cortical excitability. Cell Biology Seminar Group. Madison, WI, March 2024
+                        </li>
+                        <li><strong>Subgroup Talk: Frontiers in Cytokinesis</strong> (Ten-minute talk). Chomchai, D. &
+                            Bement, W. Positive feedback between Rho and Ect2 is essential for cortical excitability.
+                            The
+                            American Society of Cell Biology – Cell Bio 2022, Washington D.C., Dec 2022.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Posters</h2>
+                <div class="cv-item">
+                    <ul style="margin-left: 20px; list-style-type: disc;">
+                        <li>Yang, X., Zhang, W., Chomchai, D., Wen, X., Klionsky, D. & Li M. TORC1 regulates the vacuole
+                            membrane proteome through ubiquitin- and ESCRT-dependent microautophagy. MCDB Department
+                            Retreat, Ypsilanti, MI, Dec. 2019.</li>
+                        <li>Chomchai, D. & Bement, W. Positive feedback between Rho and Ect2 is essential for cortical
+                            excitability. The American Society of Cell Biology – Cell Bio 2022, Washington D.C., Dec
+                            2022.
+                        </li>
+                        <li>Chomchai, D. & Bement, W. Positive feedback between Rho and Ect2 is essential for cortical
+                            excitability. The 19th International Xenopus Conference, Cambridge, MD, August 2023.</li>
+                        <li>Chomchai, D. & Bement, W. Positive feedback between Rho and Ect2 is essential for cortical
+                            excitability. The American Society of Cell Biology – Cell Bio 2023, Boston, MA, Dec 2023.
+                        </li>
+                        <li>Chomchai, D. & Bement, W. Positive feedback between Rho and Ect2 is essential for cortical
+                            excitability. Polarity and Asymmetry in Tissue Architecture and Cell Fate – Gordon Research
+                            Conference, Manchester, NH, June 2024.</li>
+                        <li>Chomchai, D. & Bement, W. Exploring the mechanism of positive feedback in cortical
+                            excitability.
+                            The American Society of Cell Biology – Cell Bio 2024, San Diego, CA, Dec 2024.</li>
+                        <li>Chomchai, D. & Bement, W. Exploring the mechanism of positive feedback in cortical
+                            excitability.
+                            The American Society of Cell Biology – Cell Bio 2025, Philadelphia, PA, Dec 2025.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Honors and Awards</h2>
+                <div class="cv-item">
+                    <h3>NSF GRFP Honorable Mention</h3>
+                    <span class="cv-date">2022</span>
+                    <p>Bement Lab, University of Wisconsin-Madison, Madison, WI</p>
+                    <p><em>Proposal Title: The Basis of Positive Feedback in Cortical Excitability During
+                            Cytokinesis</em></p>
+                </div>
+                <div class="cv-item">
+                    <h3>High Honors for Senior Thesis in Molecular, Cellular, and Developmental Biology</h3>
+                    <span class="cv-date">2022</span>
+                    <p>Ming Li Lab, University of Michigan, Ann Arbor, MI</p>
+                    <p><em>Thesis Title: The Mechanism of the Ubiquitination and Degradation of Lysosomal Membrane
+                            Proteins</em></p>
+                </div>
+                <div class="cv-item">
+                    <h3>Area 7 Outstanding Volunteer of the Year Award</h3>
+                    <span class="cv-date">2017</span>
+                    <p>Special Olympics Michigan, Mount Pleasant, MI</p>
                 </div>
             </div>
 
@@ -115,13 +377,21 @@
                 <div class="grid grid-2">
                     <div>
                         <h3>Laboratory</h3>
-                        <p>Fluorescent Microscopy, Confocal Imaging, Live-cell Imaging, Flow Cytometry, Western Blot,
-                            Ubiquitin Blot Analysis, Genetic Screening, High-throughput Screening.</p>
+                        <p>Molecular cloning design; in vitro RNA synthesis; DNA/RNA purification; PCR and RT PCR;
+                            protein purification; SDS-PAGE and Western blotting; protein degradation assays;
+                            siRNA/morpholino knockdown; high-throughput genetic screening; flow cytometry; Xenopus
+                            laevis fertilization protocols and microinjections; time-lapse fluorescence microscopy
+                            (point-scanning, swept-field confocal, widefield, lightsheet); optogenetics; sample fixation
+                            and clearing.</p>
                     </div>
                     <div>
-                        <h3>Computational & Other</h3>
-                        <p>Image Analysis, Data Analysis, Teaching, Mentoring, Outreach (STEM programs), Spanish
-                            (Minor).</p>
+                        <h3>Software</h3>
+                        <p>Python (NumPy, SciPy, pandas, matplotlib, seaborn, napari, tifffile, pytest); HTML/CSS;
+                            JavaScript; ImageJ/Fiji; SnapGene; CellProfiler; PyMOL; GraphPad Prism; Adobe
+                            Illustrator/Photoshop; Affinity; PowerPoint/Keynote; Word; Excel; OneNote; EndNote.</p>
+                        <h3 style="margin-top: 10px;">Professional</h3>
+                        <p>Collaboration; communication; presentation of complex ideas and data; mentoring; academic
+                            writing; process optimization; laboratory procurement.</p>
                     </div>
                 </div>
             </div>
